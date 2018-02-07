@@ -42,7 +42,7 @@ public class App {
         }
 
         ArrayList<Long> all = new ArrayList<Long>() {{
-//            add(v0);
+            add(v0);
             add(v);
             add(v0);
             add(v1);
