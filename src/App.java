@@ -4,7 +4,13 @@ import java.util.ArrayList;
 public class App {
 
     public static void main(String[] args) throws IOException {
-//        QS quick = new QS(Dao.chooseData());
+        QSend quick0 = new QSend(Dao.chooseData2());
+        long start4 = System.nanoTime();
+        quick0.qs(quick0.list, 0, quick0.list.length - 1);
+        long end4 = System.nanoTime();
+        long v4 = end4 - start4;
+        System.out.println(v4 + " seconds for best quickSort!");
+
         QS quick = new QS();
         long start0 = System.nanoTime();
         quick.quickSort(0, quick.quickList.size() - 1, quick.quickList);
@@ -42,11 +48,11 @@ public class App {
         }
 
         ArrayList<Long> all = new ArrayList<Long>() {{
-            add(v0);
             add(v);
             add(v0);
             add(v1);
             add(v2);
+            add(v4);
         }};
 
         System.out.println("\n====================================\n");

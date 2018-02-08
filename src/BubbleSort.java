@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class BubbleSort {
-    private Integer[] unsortedSorted2;
+    private int[] unsortedSorted2;
     private List<Integer> unsortedSorted;
     private boolean sorted = false;
 

@@ -11,7 +11,7 @@ public class Dao {
     private static final String one = "src/resources/one_thousand.txt";
     private static final String million = "src/resources/one_million.txt";
     private static List<Integer> box = new LinkedList<>();
-    public static Integer[] box1;
+    public static int[] box1;
 
 
     public static List<Integer>  chooseData() throws IOException {
@@ -44,7 +44,7 @@ public class Dao {
 
 
 
-    public static Integer[]  chooseData2() throws IOException {
+    public static int[]  chooseData2() throws IOException {
         Command.getOptions();
         int choice = Command.getNumber();
         switch (choice) {
@@ -66,7 +66,7 @@ public class Dao {
         FileReader fr = new FileReader(pathFile);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        box1 = new Integer[size];
+        box1 = new int[size];
         int counter = 0;
 
         while ((line = br.readLine()) != null) {

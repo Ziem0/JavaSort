@@ -2,48 +2,45 @@ public class QSend {
 
     public int[] list;
 
-    public QSend() {
-        this.list = new int []{3, 6, 4, 5, 47, 65, 4, 685, 56, 536, 43365, 357, 45, 574, 53, 635};
+    public QSend(int[] list) {
+        this.list = list;
     }
 
-    private int partition(int arr[], int left, int right) {
+    public QSend() {
+        this.list = new int[]{9, 43, 7, 5, 3, 7, 8, 1, 4, 6, 0, 3465, 875855, 34622};
+    }
 
-        int i = left, j = right;
-        int tmp;
-        int pivot = arr[(left + right) / 2];
+    private int partition(int[] part, int left, int right) {
+        int i = left;
+        int j = right;
+        int pivot = part[(left + right) / 2];
 
         while (i <= j) {
-            while (arr[i] < pivot)
+            while (part[i] < pivot) {
                 i++;
-            while (arr[j] > pivot)
+            }
+            while (part[j] > pivot) {
                 j--;
+            }
             if (i <= j) {
-                tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
+                int temp = part[i];
+                part[i] = part[j];
+                part[j] = temp;
                 i++;
                 j--;
             }
-        };
+        }
         return i;
     }
 
-    public void quickSort(int arr[], int left, int right) {
-        int index = partition(arr, left, right);
-        if (left < index - 1)
-            quickSort(arr, left, index - 1);
-        if (index < right)
-            quickSort(arr, index, right);
-    }
+    public void qs(int[] part, int left, int right) {
+        int index = partition(part, left, right);
 
-    public static void main(String[] args) {
-        QSend qs = new QSend();
-        qs.quickSort(qs.list, 0, qs.list.length-1);
-
-        for (int i : qs.list) {
-            System.out.println(i);
+        if (left < index -1) {
+            qs(part, left, index -1);
         }
-
+        if (index < right) {
+            qs(part, index, right);
+        }
     }
-
 }
